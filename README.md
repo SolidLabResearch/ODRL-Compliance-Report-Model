@@ -1,5 +1,9 @@
 # Compliance Report
 
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14193486.svg)](https://doi.org/10.5281/zenodo.14193486)
+
+
 A Compliance Report is our proposed output for an [Open Digitial Rights Language (ODRL)](https://www.w3.org/TR/odrl-model/) Policy.
 
 The informal definition is the following: *"A vocabulary that is used to elaborate the result of an evaluation of an ODRL Policy, (optionally) ODRL Request and the state of the world. <br>
