@@ -205,6 +205,13 @@ report:ruleReport a rdfs:Property, skos:Concept;
     rdfs:domain report:PolicyReport ; 
     rdfs:range report:RuleReport  .
 
+report:conditionReport a rdfs:Property, skos:Concept;
+    rdfs:isDefinedBy report: ;
+    skos:definition "Relates a duty report to a permission report." ;
+    rdfs:comment "This allows the activation state to be calculated on the Deontic State of the duty report. When Violated, it is not allowed for the Permission Report to be Active.";
+    rdfs:domain report:PermissionReport ;
+    rdfs:range report:DutyReport .
+
 report:premiseReport a rdfs:Property, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the explanation and satisfaction state of one of the premises of a rule to its rule report. A second definition is in the case of complex constraints: it relates the explanation and satisfaction state of one of the premises of a complex constraint (e.g. logical constraint) to its premise report.";
