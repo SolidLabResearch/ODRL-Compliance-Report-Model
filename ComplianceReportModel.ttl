@@ -251,7 +251,7 @@ report:performanceState a rdfs:Property, skos:Concept;
 report:deonticState a rdfs:Property, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the doentic state as a property to a prohibition or duty report.";
-    rdfs:domain report:ProhibitionReport, report:DutyReport ; 
+    rdfs:domain report:RuleReport; 
     rdfs:range report:DeonticState .
 
 report:constraint a rdfs:Property, skos:Concept;
