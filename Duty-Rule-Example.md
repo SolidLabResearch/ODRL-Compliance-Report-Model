@@ -39,7 +39,7 @@ Therefore, the Deontic State is the following NONSET.
 
 ```ttl
 @prefix ex: <http://example.org/> .
-@prefix report: <http://example.com/report/temp/> .
+@prefix report: <https://w3id.org/force/compliance-report#> .
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
@@ -63,7 +63,7 @@ Therefore, the Deontic State is the following FULFILLED.
 
 ```ttl
 @prefix ex: <http://example.org/> .
-@prefix report: <http://example.com/report/temp/> .
+@prefix report: <https://w3id.org/force/compliance-report#> .
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
@@ -87,7 +87,7 @@ Therefore, the Deontic State is the following VIOLATED.
 
 ```ttl
 @prefix ex: <http://example.org/> .
-@prefix report: <http://example.com/report/temp/> .
+@prefix report: <https://w3id.org/force/compliance-report#> .
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
