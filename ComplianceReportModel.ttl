@@ -1,8 +1,37 @@
 @prefix report: <https://w3id.org/force/compliance-report#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix odrl: <http://www.w3.org/ns/odrl/2/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# ---------------- Ontology Metadata ------------------ #
+
+<https://w3id.org/force/compliance-report> a owl:Ontology ;
+    dcterms:title "Compliance Report Model"@en ;
+    vann:preferredNamespacePrefix "report" ;
+    vann:preferredNamespaceUri "https://w3id.org/force/compliance-report#" ;
+    rdfs:label "Compliance Report Model"@en ;
+    owl:versionInfo "0.9.0" ;
+    # owl:versionIRI <https://w3id.org/force/compliance-report/0.9.0> ;
+    dcterms:created "2024-11-20"^^xsd:date ;
+    # dcterms:modified "2025-xx-xx"^^xsd:date ;
+    dcterms:issued "2024-11-20"^^xsd:date ;
+    dcterms:creator "Wout Slabbinck", "Beatriz Esteves" ;
+    dcterms:publisher "Wout Slabbinck" ;
+    dcterms:abstract "A model and vocabulary that is used to elaborate the result of an evaluation of (ODRL Policy, ODRL Request, state of the world)."@en ;
+    dcterms:description "A model and vocabulary that is used to elaborate the result of an evaluation of (ODRL Policy, ODRL Request, state of the world)."@en ;
+    rdfs:comment "This is the Turtle serialisation for the Compliance Report Model."@en ;
+    dcterms:bibliographicCitation "Cite this vocabulary as: Slabbinck, W., Esteves, B. (2024). Compliance Report Model (Version 0.9.0). https://doi.org/10.5281/zenodo.14193486"@en ;
+    bibo:doi "10.5281/zenodo.14193486"@en ;
+    foaf:logo <https://github.com/SolidLabResearch/ODRL-Compliance-Report-Model/blob/main/img/Compliance%20Report%20Model.svg> ;
+    dcterms:source <http://www.w3.org/ns/odrl/2/>, <https://w3c.github.io/odrl/formal-semantics/> ;
+    dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> .
 
 # classes
 report:PolicyReport a rdfs:Class, skos:Concept ;
