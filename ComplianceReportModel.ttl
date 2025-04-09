@@ -22,8 +22,8 @@
     dcterms:created "2024-11-20"^^xsd:date ;
     # dcterms:modified "2025-xx-xx"^^xsd:date ;
     dcterms:issued "2024-11-20"^^xsd:date ;
-    dcterms:creator "Wout Slabbinck", "Beatriz Esteves" ;
-    dcterms:publisher "Wout Slabbinck" ;
+    dcterms:creator <https://pod.woutslabbinck.com/profile/card#me>, <https://solidweb.me/besteves4/profile/card#me> ;
+    dcterms:publisher <https://data.knows.idlab.ugent.be/person/office/#> ;
     dcterms:abstract "A model and vocabulary that is used to elaborate the result of an evaluation of (ODRL Policy, ODRL Request, state of the world)."@en ;
     dcterms:description "A model and vocabulary that is used to elaborate the result of an evaluation of (ODRL Policy, ODRL Request, state of the world)."@en ;
     rdfs:comment "This is the Turtle serialisation for the Compliance Report Model."@en ;
