@@ -1,4 +1,4 @@
-# Compliance Report
+# ODRL Compliance Report Model
 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14193486.svg)](https://doi.org/10.5281/zenodo.14193486)
@@ -11,7 +11,7 @@ It elaborates not only **whether** a rule from a policy is active, but also **wh
 
 It has been modelled by taking in the [specification of the ODRL Formal Semantics](https://w3c.github.io/odrl/formal-semantics/) and iterated upon through discussions between Beatriz and Wout.
 
-The Compliance Report Model can be found at the root of this repository: [`ComplianceReportModel.ttl`](./ComplianceReportModel.ttl)
+The ODRL Compliance Report Model can be found at the root of this repository: [`ComplianceReportModel.ttl`](./ComplianceReportModel.ttl)
 
 Below is a visualisation of this report.
 
@@ -25,7 +25,7 @@ For each type of [ODRL Rule](https://www.w3.org/TR/odrl-model/#rule), an example
 - [Prohibition Rule Example](./Prohibition-Rule-Example.md)
 - [Duty Rule Example](./Duty-Rule-Example.md)
 
-Note: since no formalisation exist on the inputs apart from the ODRL Policy itself for the generation of output (the compliance report), a decision was made such that an evaluation is a safe, determenistic operation and thus strictly dependent on its inputs:
+Note: since no formalisation exist on the inputs apart from the ODRL Policy itself for the generation of output (the compliance report), a decision was made such that an evaluation is a safe, deterministic operation and thus strictly dependent on its inputs:
 - A time triple is present as state of the world (e.g. `temp:currentTime dct:issued "2024-01-01T00:00:00"^^xsd:dateTime .`)
 - For the access control scenario, an ODRL Request Policy is used with a Permission rule. This can then be read as follows: *"Is the **assignee** allowed to perform the particular **action** on a given **target** resource?"*.
 
