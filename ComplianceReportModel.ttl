@@ -172,7 +172,7 @@ report:Unknown a rdfs:Class, skos:Concept ;
 report:DeonticState a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Deontic State" ;
-    rdfs:definition "The deontic state for an odrl:Rule." ;
+    skos:definition "The deontic state for an odrl:Rule." ;
     rdfs:comment "This state can be derived from the combination of the activation state, perfomance state and the deontic concept of the rule.".
 
 report:NonSet a rdfs:Class, skos:Concept;
@@ -180,21 +180,21 @@ report:NonSet a rdfs:Class, skos:Concept;
     rdfs:label "Non-Set State";
     rdfs:subClassOf report:DeonticState ;
     rdfs:disjointWith report:Violated, report:Fulfilled ;
-    rdfs:definition "The performance state is unknown at the time of evaluation or the combination of activation state and performance state neither complies nor contradicts the deontic concept.".
+    skos:definition "The performance state is unknown at the time of evaluation or the combination of activation state and performance state neither complies nor contradicts the deontic concept.".
 
 report:Violated a rdfs:Class, skos:Concept;
     rdfs:isDefinedBy report: ;
     rdfs:label "Violated State";
     rdfs:subClassOf report:DeonticState ;
     rdfs:disjointWith report:NonSet, report:Fulfilled ;
-    rdfs:definition "The combination of activation state and performance state contradicts the deontic concept of the rule.".
+    skos:definition "The combination of activation state and performance state contradicts the deontic concept of the rule.".
 
 report:Fulfilled a rdfs:Class, skos:Concept;
     rdfs:isDefinedBy report: ;
     rdfs:label "Fulfilled State";
     rdfs:subClassOf report:DeonticState ;
     rdfs:disjointWith report:NonSet, report:Violated ;
-    rdfs:definition "The combination of activation state and performance state complies with the deontic concept of the rule.".
+    skos:definition "The combination of activation state and performance state complies with the deontic concept of the rule.".
 
 report:SatisfactionState a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
@@ -279,7 +279,7 @@ report:performanceState a rdfs:Property, skos:Concept;
 
 report:deonticState a rdfs:Property, skos:Concept;
     rdfs:isDefinedBy report: ;
-    skos:definition "Relates the doentic state as a property to a prohibition or duty report.";
+    skos:definition "Relates the deontic state as a property to a prohibition or duty report.";
     rdfs:domain report:RuleReport; 
     rdfs:range report:DeonticState .
 
