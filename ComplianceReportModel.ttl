@@ -48,21 +48,21 @@ report:PermissionReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Permission Compliance report" ;
     rdfs:subClassOf report:RuleReport ;
-    rdfs:disjointWith report:ProhibitionReport, report:DutyReport;
+    owl:disjointWith report:ProhibitionReport, report:DutyReport;
     skos:definition "The result of an ODRL Evaluation over an odrl:Permission, the state of the world and, in case of an access control scenario, an odrl:Permission from an odrl:Request.".
 
 report:ProhibitionReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Prohibition Compliance report" ;
     rdfs:subClassOf report:RuleReport ;
-    rdfs:disjointWith report:PermissionReport, report:DutyReport;
+    owl:disjointWith report:PermissionReport, report:DutyReport;
     skos:definition "The result of an ODRL Evaluation over an odrl:Prohibition, the state of the world and, in case of an access control scenario, an odrl:Permission from an odrl:Request.".
 
 report:DutyReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Duty Compliance report" ;
     rdfs:subClassOf report:RuleReport ;
-    rdfs:disjointWith report:PermissionReport, report:ProhibitionReport ;
+    owl:disjointWith report:PermissionReport, report:ProhibitionReport ;
     skos:definition "The evaluation report of an odrl:Duty.".
 
 report:PremiseReport a rdfs:Class, skos:Concept ;
@@ -74,7 +74,7 @@ report:PremiseReport a rdfs:Class, skos:Concept ;
 report:ConstraintReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:subClassOf report:PremiseReport;
-    rdfs:disjointWith report:PartyReport, report:ActionReport, report:TargetReport;
+    owl:disjointWith report:PartyReport, report:ActionReport, report:TargetReport;
     rdfs:label "Constraint Compliance report" ;
     skos:definition "The result of an ODRL Evaluation over an odrl:Constraint. Extra context may be used which is found in the closed world representation of the State of the World and an odrl:Request.".
 
@@ -83,21 +83,21 @@ report:PartyReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Party Compliance Report" ;
     rdfs:subClassOf report:PremiseReport;
-    rdfs:disjointWith report:ConstraintReport, report:ActionReport, report:TargetReport;
+    owl:disjointWith report:ConstraintReport, report:ActionReport, report:TargetReport;
     skos:definition "The result of an ODRL Evaluation over the party of an odrl:Rule. In the case of an access control scenario, the party of the odrl:Rule of an odrl:Request is also used in the evaluation. Extra context may be used which is found in the closed world representation of the State of the World and an odrl:Request." .
 
 report:ActionReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Action Compliance Report" ;
     rdfs:subClassOf report:PremiseReport;
-    rdfs:disjointWith report:ConstraintReport, report:PartyReport, report:TargetReport;
+    owl:disjointWith report:ConstraintReport, report:PartyReport, report:TargetReport;
     skos:definition "The result of an ODRL Evaluation over the action of an odrl:Rule. In the case of an access control scenario, the action of the odrl:Rule of an odrl:Request is also used in the evaluation. Extra context may be used which is found in the closed world representation of the State of the World and an odrl:Request." .
 
 report:TargetReport a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Target Compliance Report" ;
     rdfs:subClassOf report:PremiseReport;
-    rdfs:disjointWith report:ConstraintReport, report:PartyReport, report:ActionReport;
+    owl:disjointWith report:ConstraintReport, report:PartyReport, report:ActionReport;
     skos:definition "The result of an ODRL Evaluation over the target of an odrl:Rule. In the case of an access control scenario, the target of the odrl:Rule of an odrl:Request is also used in the evaluation. Extra context may be used which is found in the closed world representation of the State of the World and an odrl:Request." .
     
 report:ActivationState a rdfs:Class, skos:Concept ;
@@ -110,7 +110,7 @@ report:Active a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Active State" ;
     rdfs:subClassOf report:ActivationState ;
-    rdfs:disjointWith report:Inactive ;
+    owl:disjointWith report:Inactive ;
     skos:definition "The odrl:Rule is in effect. All the refinements and constraints of the rule are satisfied." ; 
     rdfs:comment "In effect has a different meaning that depends on the type of rule. When the state is active for permission, this means that the rule action may be performed. When the state is active for prohibition, this means that the rule action may not be performed.When the state is active for a duty, this means that the rule action must be performed.".
 
@@ -118,27 +118,27 @@ report:Inactive a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Inactive State" ;
     rdfs:subClassOf report:ActivationState ;
-    rdfs:disjointWith report:Active ;
+    owl:disjointWith report:Active ;
     skos:definition "The odrl:Rule is not in effect. Not all of the refinements and constraints of the rule are satisfied.";
     rdfs:comment "In effect has a different meaning that depends on the type of rule. When the state is inactive for permission, this means that the rule action may not be performed. When the state is inactive for prohibition or duty, no statements can be made about the rule action performance state.".
 
 report:AttemptState a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
-    rdfs:label "Attempted State" ;
+    rdfs:label "Attempt State" ;
     skos:definition "The state of whether a request attempted to perform an action of a rule." .
 
 report:Attempted a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Attempted State" ;
     rdfs:subClassOf report:AttemptState ;
-    rdfs:disjointWith report:NotAttempted ;
+    owl:disjointWith report:NotAttempted ;
     skos:definition "There is a request that attempts to perform the action of the rule." .
 
 report:NotAttempted a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Not Attempted State" ;
     rdfs:subClassOf report:AttemptState ;
-    rdfs:disjointWith report:Attempted ;
+    owl:disjointWith report:Attempted ;
     skos:definition "There is no request that attempts to perform the action of the rule." .
 
 report:PerformanceState a rdfs:Class, skos:Concept ;
@@ -151,21 +151,21 @@ report:Performed a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Performed State" ;
     rdfs:subClassOf report:PerformanceState ;
-    rdfs:disjointWith report:Unperformed, report:Unknown ;
+    owl:disjointWith report:Unperformed, report:Unknown ;
     skos:definition "The action of an odrl:Rule is performed.". 
 
 report:Unperformed a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Unperformed State" ;
     rdfs:subClassOf report:PerformanceState ;
-    rdfs:disjointWith report:Performed, report:Unknown ;
+    owl:disjointWith report:Performed, report:Unknown ;
     skos:definition "The action of an odrl:Rule is NOT performed AND can no longer be performed.". 
 
 report:Unknown a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Performance Unknown State" ;
     rdfs:subClassOf report:PerformanceState ;
-    rdfs:disjointWith report:Performed, report:Unperformed ;
+    owl:disjointWith report:Performed, report:Unperformed ;
     skos:definition "The explicit state for not knowing anything about the performance state of the action of an odrl:Rule." ;
     rdfs:comment "This is particulary useful in the case it is known that currently the action is not performed, but that it is still possible for the action to be performed." .
 
@@ -179,21 +179,21 @@ report:NonSet a rdfs:Class, skos:Concept;
     rdfs:isDefinedBy report: ;
     rdfs:label "Non-Set State";
     rdfs:subClassOf report:DeonticState ;
-    rdfs:disjointWith report:Violated, report:Fulfilled ;
+    owl:disjointWith report:Violated, report:Fulfilled ;
     skos:definition "The performance state is unknown at the time of evaluation or the combination of activation state and performance state neither complies nor contradicts the deontic concept.".
 
 report:Violated a rdfs:Class, skos:Concept;
     rdfs:isDefinedBy report: ;
     rdfs:label "Violated State";
     rdfs:subClassOf report:DeonticState ;
-    rdfs:disjointWith report:NonSet, report:Fulfilled ;
+    owl:disjointWith report:NonSet, report:Fulfilled ;
     skos:definition "The combination of activation state and performance state contradicts the deontic concept of the rule.".
 
 report:Fulfilled a rdfs:Class, skos:Concept;
     rdfs:isDefinedBy report: ;
     rdfs:label "Fulfilled State";
     rdfs:subClassOf report:DeonticState ;
-    rdfs:disjointWith report:NonSet, report:Violated ;
+    owl:disjointWith report:NonSet, report:Violated ;
     skos:definition "The combination of activation state and performance state complies with the deontic concept of the rule.".
 
 report:SatisfactionState a rdfs:Class, skos:Concept ;
@@ -205,91 +205,91 @@ report:Satisfied a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Satisfied State" ;
     rdfs:subClassOf report:SatisfactionState ;
-    rdfs:disjointWith report:Unsatisfied ;
+    owl:disjointWith report:Unsatisfied ;
     skos:definition "The premise is satisfied.".
 
 report:Unsatisfied a rdfs:Class, skos:Concept ;
     rdfs:isDefinedBy report: ;
     rdfs:label "Unsatisfied State" ;
     rdfs:subClassOf report:SatisfactionState ;
-    rdfs:disjointWith report:Satisfied ;
+    owl:disjointWith report:Satisfied ;
     skos:definition "The premise is not satisfied.".
 
 # properties
-report:policy a rdfs:Property, skos:Concept;
+report:policy a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Denotes for a policy report which policy is being evaluated.";
     rdfs:domain report:PolicyReport ; 
-    rdfs:range odrl:Set, odrl:Agreement, odrl:Offer .
+    rdfs:range [ a owl:Class ; owl:unionOf ( odrl:Set odrl:Agreement odrl:Offer ) ] .
 
-report:policyRequest a rdfs:Property, skos:Concept;
+report:policyRequest a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Denotes for a policy report which request (policy) is being evaluated against the given policy.";
     rdfs:domain report:PolicyReport ; 
     rdfs:range odrl:Request .
 
-report:ruleReport a rdfs:Property, skos:Concept;
+report:ruleReport a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the evaluation of one of the rules (the rule report) of a policy to its policy report.";
     rdfs:domain report:PolicyReport ; 
     rdfs:range report:RuleReport  .
 
-report:conditionReport a rdfs:Property, skos:Concept;
+report:conditionReport a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates a duty report to a permission report." ;
     rdfs:comment "This allows the activation state to be calculated on the Deontic State of the duty report. When Violated, it is not allowed for the Permission Report to be Active.";
     rdfs:domain report:PermissionReport ;
     rdfs:range report:DutyReport .
 
-report:premiseReport a rdfs:Property, skos:Concept;
+report:premiseReport a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the explanation and satisfaction state of one of the premises of a rule to its rule report. A second definition is in the case of complex constraints: it relates the explanation and satisfaction state of one of the premises of a complex constraint (e.g. logical constraint) to its premise report.";
-    rdfs:domain report:RuleReport, report:PremiseReport ; 
+    rdfs:domain [ a owl:Class ; owl:unionOf ( report:RuleReport report:PremiseReport ) ] ; 
     rdfs:range report:PremiseReport  .
 
-report:rule a rdfs:Property, skos:Concept;
+report:rule a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Denotes for a rule report which rule of a policy is being evaluated.";
     rdfs:domain report:RuleReport ; 
     rdfs:range odrl:Rule .
 
-report:ruleRequest a rdfs:Property, skos:Concept;
+report:ruleRequest a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Denotes for a permission or prohibition report which access request rule is being evaluated against the policy rule.";
-    rdfs:domain report:PermissionReport, report:ProhibitionReport ; 
+    rdfs:domain [ a owl:Class ; owl:unionOf ( report:PermissionReport report:ProhibitionReport ) ] ; 
     rdfs:range odrl:Rule .
 
-report:activationState a rdfs:Property, skos:Concept;
+report:activationState a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the activation state as a property to a rule report.";
     rdfs:domain report:RuleReport ; 
     rdfs:range report:ActivationState .
 
-report:attemptState a rdfs:Property, skos:Concept;
+report:attemptState a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the attempted state as a property to a permission or prohibition report.";
-    rdfs:domain report:PermissionReport, report:ProhibitionReport ; # Not sure whether an obligation can also be attempted
+    rdfs:domain [ a owl:Class ; owl:unionOf ( report:PermissionReport report:ProhibitionReport ) ] ; # Not sure whether an obligation can also be attempted
     rdfs:range report:AttemptState .
 
-report:performanceState a rdfs:Property, skos:Concept;
+report:performanceState a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the state of performance as a property to a rule report.";
     rdfs:domain report:RuleReport ; 
     rdfs:range report:PerformanceState .
 
-report:deonticState a rdfs:Property, skos:Concept;
+report:deonticState a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the deontic state as a property to a prohibition or duty report.";
     rdfs:domain report:RuleReport; 
     rdfs:range report:DeonticState .
 
-report:constraint a rdfs:Property, skos:Concept;
+report:constraint a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Denotes for a constraint report which constraint is being evaluated.";
     rdfs:domain report:PremiseReport ; 
     rdfs:range odrl:Constraint .
 
-report:satisfactionState a rdfs:Property, skos:Concept;
+report:satisfactionState a owl:ObjectProperty, skos:Concept;
     rdfs:isDefinedBy report: ;
     skos:definition "Relates the satisfaction state as a property to a premise report.";
     rdfs:domain report:PremiseReport ; 
