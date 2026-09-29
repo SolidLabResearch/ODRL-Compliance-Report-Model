@@ -1,0 +1,22 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix report: <https://w3id.org/force/compliance-report#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix ex: <http://example.com/> .
+
+<http://example.com/test/report-test> a owl:Ontology ;
+    owl:imports <https://w3id.org/force/compliance-report> .
+
+ex:pr a report:PolicyReport ;
+    report:policy ex:policyA1 ;
+    report:ruleReport ex:rr .
+
+ex:policyA1 a odrl:Set .
+
+ex:rr a report:PermissionReport ;
+    report:ruleRequest ex:reqRule ;
+    report:attemptState report:Attempted ;
+    report:premiseReport ex:cr ;
+    report:activationState report:Active .
+
+ex:cr a report:ConstraintReport ;
+    report:satisfactionState report:Satisfied .
